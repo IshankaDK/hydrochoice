@@ -16,7 +16,7 @@
         android:layout_marginTop="225dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="2dp"
-        android:hint="Email"
+        android:hint="@string/email"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="20dp"
-        android:hint="Password"
+        android:hint="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="252dp"
         android:background="@drawable/custom_button"
-        android:text="Login"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -82,7 +82,7 @@
         android:layout_marginStart="199dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="199dp"
-        android:text="new to app ?"
+        android:text="@string/new_to_app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
@@ -95,13 +95,12 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="144dp"
         android:layout_gravity="center_horizontal"
-        android:text="Create new account"
+        android:text="@string/create_new_account"
         android:textColor="#2980b9"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:onClick="txtNewAccAction"/>
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -119,7 +118,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="44dp"
-        android:text="Department of Agriculture Engineering"
+        android:text="@string/department_of_agriculture_engineering"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linkNewAccount" />
 
@@ -129,7 +128,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="44dp"
-        android:text="Faculty of Agriculture"
+        android:text="@string/faculty_of_agriculture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -140,7 +139,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="44dp"
-        android:text="University of Ruhuna"
+        android:text="@string/university_of_ruhuna"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -169,7 +168,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />"/>
-
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

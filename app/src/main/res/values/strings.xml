@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">HYDROCHOICE</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_to_app">new to app ?</string>
+    <string name="department_of_agriculture_engineering">Department of Agriculture Engineering</string>
+    <string name="faculty_of_agriculture">Faculty of Agriculture</string>
+    <string name="university_of_ruhuna">University of Ruhuna</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign UP</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="loginText">Login</string>
 </resources>
