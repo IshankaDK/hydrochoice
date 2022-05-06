@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        btnLogin = findViewById(R.id.loginButton);
+        btnLogin.setOnClickListener(
+                view -> {
+                    Toast.makeText(getApplicationContext(),"Welcome to HydroChoice dashboard..!", Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(MainActivity.this, DashboardActivity.class);
+                    startActivity(intent1);
+                }
+        );
+
     }
 
 

@@ -12,4 +12,9 @@
     <string name="sign_up">Sign UP</string>
     <string name="already_have_an_account">Already have an account ?</string>
     <string name="loginText">Login</string>
+    <string name="ec_value">EC value</string>
+    <string name="off">OFF</string>
+    <string name="pump_status">Pump status :</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="_2_52">2.52</string>
 </resources>
