@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "618514812428",
+    "firebase_url": "https://hydrochoiceapp-default-rtdb.firebaseio.com",
+    "project_id": "hydrochoiceapp",
+    "storage_bucket": "hydrochoiceapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618514812428:android:fd4f16800cba4488b7a829",
+        "android_client_info": {
+          "package_name": "com.uor.hydrochoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618514812428-rcodb744npv2k2qjgub342gmshbqr9hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvyctbpaPTm3SbJwGTVbfEHOc2I65OHcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618514812428-rcodb744npv2k2qjgub342gmshbqr9hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

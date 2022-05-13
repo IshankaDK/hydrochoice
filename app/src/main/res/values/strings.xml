@@ -16,5 +16,5 @@
     <string name="off">OFF</string>
     <string name="pump_status">Pump status :</string>
     <string name="dashboard">Dashboard</string>
-    <string name="_2_52">2.52</string>
+    <string name="no_data">No Data</string>
 </resources>

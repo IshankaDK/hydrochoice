@@ -90,13 +90,13 @@
         app:layout_constraintStart_toStartOf="@+id/view2" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/ecValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_2_52"
+        android:text="@string/no_data"
         android:textAlignment="center"
         android:textColor="#0D22DA"
-        android:textSize="60sp"
+        android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -122,8 +122,8 @@
 
     <ImageView
         android:id="@+id/exitIcon"
-        android:layout_width="56dp"
-        android:layout_height="50dp"
+        android:layout_width="54dp"
+        android:layout_height="37dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -142,24 +142,40 @@
         android:textColor="#0545E6"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintEnd_toStartOf="@+id/onOrOff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/onOrOff"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="44dp"
         android:text="@string/off"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#F60707"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="52dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginEnd="15dp"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:textColor="#D11414"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/exitIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
