@@ -22,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
     Button btnSignUp;
     TextView linkLogin;
 
-    TextInputEditText txtEmail, txtPassword, txtConfirmPassword;
+    private TextInputEditText txtEmail, txtPassword, txtConfirmPassword;
 
     private String email, password, confirmPassword;
 
@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
         db = FirebaseFirestore.getInstance();
 
         txtEmail = findViewById(R.id.txtEmail);
