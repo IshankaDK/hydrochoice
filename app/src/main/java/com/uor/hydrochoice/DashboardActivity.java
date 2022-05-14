@@ -2,9 +2,12 @@ package com.uor.hydrochoice;
 
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +41,21 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        //Notification Building
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("Notification","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(DashboardActivity.this, "Notification")
+                .setSmallIcon(R.drawable.icnotification)
+                .setContentTitle("EC Value Warning")
+                .setContentText("EC Value is not in good range. pump is ON..!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+        NotificationManagerCompat from = NotificationManagerCompat.from(DashboardActivity.this);
+
+        //logging out
         exitIcon = findViewById(R.id.exitIcon);
         exitIcon.setOnClickListener(
                 view -> {
@@ -44,6 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
                     startActivity(intent1);
                 }
         );
+
 
         // Read from the database
         Query query = myRef.orderByKey().limitToLast(1);
@@ -72,6 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
                         ecValueText.setTextColor(Color.rgb(255, 56, 56));
                         onOrOffText.setTextColor(Color.rgb(255, 56, 56));
                         stroke.setStroke(20, Color.parseColor("#ff3838"), 10, 0);
+                        from.notify(100,builder.build());
                     }
                 }
             }
