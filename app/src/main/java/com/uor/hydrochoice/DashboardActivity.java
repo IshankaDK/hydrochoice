@@ -3,7 +3,10 @@ package com.uor.hydrochoice;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,9 +26,10 @@ public class DashboardActivity extends AppCompatActivity {
     ImageView exitIcon;
     TextView ecValueText;
     TextView onOrOffText;
+    View circle;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("HydrochoiceApp/EC/EC Value");
+    DatabaseReference myRef = database.getReference("HydrochoiceApp/EC Value");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class DashboardActivity extends AppCompatActivity {
         exitIcon = findViewById(R.id.exitIcon);
         exitIcon.setOnClickListener(
                 view -> {
-                    Toast.makeText(getApplicationContext(),"Exiting from dashboard..!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Exiting from dashboard..!", Toast.LENGTH_SHORT).show();
                     Intent intent1 = new Intent(DashboardActivity.this, MainActivity.class);
                     startActivity(intent1);
                 }
@@ -47,19 +51,27 @@ public class DashboardActivity extends AppCompatActivity {
             @SuppressLint({"DefaultLocale", "SetTextI18n"})
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ecValueText = findViewById(R.id.ecValueText);
+                onOrOffText = findViewById(R.id.onOrOff);
+                circle = findViewById(R.id.circle);
+                GradientDrawable stroke = (GradientDrawable)circle.getBackground();
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for (DataSnapshot child:dataSnapshot.getChildren()) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
                     String ecValue = (String) child.getValue();
-                    ecValueText = findViewById(R.id.ecValueText);
-                    onOrOffText = findViewById(R.id.onOrOff);
                     assert ecValue != null;
                     String formatVal = String.format("%.3f", Double.parseDouble(ecValue));
                     ecValueText.setText(formatVal);
-                    if (Double.parseDouble(formatVal) >=2 && Double.parseDouble(formatVal) <= 3 ){
-                       onOrOffText.setText("OFF");
-                    }else {
+                    if (Double.parseDouble(formatVal) >= 2 && Double.parseDouble(formatVal) <= 3) {
+                        onOrOffText.setText("OFF");
+                        ecValueText.setTextColor(Color.rgb(46,204,113));
+                        onOrOffText.setTextColor(Color.rgb(46,204,113));
+                        stroke.setStroke(20, Color.parseColor("#2ecc71"), 10, 0);
+                    } else {
                         onOrOffText.setText("ON");
+                        ecValueText.setTextColor(Color.rgb(255, 56, 56));
+                        onOrOffText.setTextColor(Color.rgb(255, 56, 56));
+                        stroke.setStroke(20, Color.parseColor("#ff3838"), 10, 0);
                     }
                 }
             }
@@ -67,7 +79,7 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 // Failed to read value
-                System.out.println(""+error.toException());
+                System.out.println("" + error.toException());
             }
         });
     }
