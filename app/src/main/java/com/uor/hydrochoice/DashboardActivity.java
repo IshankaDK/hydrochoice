@@ -29,12 +29,12 @@ import com.google.firebase.database.ValueEventListener;
 public class DashboardActivity extends AppCompatActivity {
 
     ImageView exitIcon;
-    TextView ecValueText;
-    TextView onOrOffText;
-    View circle;
+    private TextView ecValueText;
+    private TextView onOrOffText;
+    private View circle;
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("HydrochoiceApp/EC Value");
+    private final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private final DatabaseReference myRef = database.getReference("HydrochoiceApp/EC Value");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
