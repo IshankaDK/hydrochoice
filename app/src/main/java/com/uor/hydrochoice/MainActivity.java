@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
     private void loginToApp(String email, String password) {
         Query query = db.collection("users").whereEqualTo("email", email);
         query.get().addOnCompleteListener(task -> {
+            if (task.getResult().isEmpty()){
+                Toast.makeText(getApplicationContext(), "User not found. please check your email", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String dbPassword = (String) document.get("password");
@@ -81,12 +86,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                 }
             } else {
+                System.out.println("error log part");
                 Log.d(TAG, "Error getting documents: ", task.getException());
             }
         });
 
 
     }
-
-
 }
