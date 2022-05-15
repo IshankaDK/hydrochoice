@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(email)) {
                         txtEmail.setError("Please Enter an email");
                     } else if (TextUtils.isEmpty(password)) {
-                        txtPassword.setError("Please Enter an password");
+                        txtPassword.setError("Please Enter a password");
                     } else if (TextUtils.isEmpty(confirmPassword)) {
                         txtConfirmPassword.setError("Please Enter above password");
                     }else {
