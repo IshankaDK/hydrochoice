@@ -16,7 +16,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                 }
             } else {
-                System.out.println("error log part");
                 Log.d(TAG, "Error getting documents: ", task.getException());
             }
         });
