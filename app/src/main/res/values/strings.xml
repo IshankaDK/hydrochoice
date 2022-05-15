@@ -17,4 +17,6 @@
     <string name="pump_status">Pump status :</string>
     <string name="dashboard">Dashboard</string>
     <string name="no_data">No Data</string>
+    <string name="welcome">Welcome</string>
+    <string name="your_email_com">Your@email.com</string>
 </resources>

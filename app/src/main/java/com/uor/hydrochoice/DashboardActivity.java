@@ -40,7 +40,15 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("name", MODE_PRIVATE);
+        String loggedEmail = prefs.getString("email", "");
+
         setContentView(R.layout.activity_dashboard);
+
+
+        TextView userEmailText = findViewById(R.id.userMailText);
+        userEmailText.setText(loggedEmail);
 
         //Notification Building
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
