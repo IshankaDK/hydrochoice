@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
@@ -59,9 +60,18 @@ public class DashboardActivity extends AppCompatActivity {
         exitIcon = findViewById(R.id.exitIcon);
         exitIcon.setOnClickListener(
                 view -> {
+
+                    SharedPreferences.Editor editor = getSharedPreferences("name", MODE_PRIVATE).edit();
+                    editor.putString("email", "");
+                    editor.putBoolean("isLoggedIn", false);
+                    editor.apply();
+
                     Toast.makeText(getApplicationContext(), "Exiting from dashboard..!", Toast.LENGTH_SHORT).show();
                     Intent intent1 = new Intent(DashboardActivity.this, MainActivity.class);
+                    intent1.putExtra("finish",true);
+                    intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent1);
+                    finish();
                 }
         );
 

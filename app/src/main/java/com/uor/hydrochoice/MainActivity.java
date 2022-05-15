@@ -3,6 +3,7 @@ package com.uor.hydrochoice;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("name", MODE_PRIVATE);
+        boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
+        if (isLoggedIn){
+            startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
@@ -77,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     String dbPassword = (String) document.get("password");
                         if (dbPassword != null && dbPassword.equals(password)) {
+                            SharedPreferences.Editor editor = getSharedPreferences("name", MODE_PRIVATE).edit();
+                            editor.putString("email",email.trim());
+                            editor.putBoolean("isLoggedIn",true);
+                            editor.apply();
                             Toast.makeText(getApplicationContext(), "Welcome to HydroChoice dashboard..!", Toast.LENGTH_SHORT).show();
                             Intent intent1 = new Intent(MainActivity.this, DashboardActivity.class);
                             startActivity(intent1);
