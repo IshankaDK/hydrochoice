@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HYDROCHOICE</string>
+    <string name="app_name">Hydrochoice</string>
     <string name="create_new_account">Create new account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
