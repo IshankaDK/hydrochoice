@@ -19,4 +19,9 @@
     <string name="no_data">No Data</string>
     <string name="welcome">Welcome</string>
     <string name="your_email_com">Your@email.com</string>
+    <string name="first_attempt">First attempt :</string>
+    <string name="second_attempt">Second attempt :</string>
+    <string name="first_data">first data</string>
+    <string name="second_data">second data</string>
+    <string name="logout">Logout</string>
 </resources>

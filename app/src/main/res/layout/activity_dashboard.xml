@@ -55,7 +55,7 @@
         android:id="@+id/view3"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="41dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -135,7 +135,7 @@
         android:layout_width="223dp"
         android:layout_height="46dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="139dp"
         android:layout_marginEnd="15dp"
         android:text="@string/pump_status"
         android:textAlignment="center"
@@ -147,11 +147,45 @@
         app:layout_constraintTop_toBottomOf="@+id/circle" />
 
     <TextView
+        android:id="@+id/textView16"
+        android:layout_width="214dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/first_attempt"
+        android:textAlignment="textStart"
+        android:textColor="#2980b9"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/firstAttemptText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="214dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/second_attempt"
+        android:textAlignment="textStart"
+        android:textColor="#2980b9"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/firstAttemptText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle" />
+
+    <TextView
         android:id="@+id/onOrOff"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="139dp"
         android:layout_marginEnd="44dp"
         android:text="@string/off"
         android:textAlignment="textStart"
@@ -163,12 +197,40 @@
         app:layout_constraintTop_toBottomOf="@+id/circle" />
 
     <TextView
+        android:id="@+id/firstAttemptText"
+        android:layout_width="94dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/first_data"
+        android:textAlignment="textStart"
+        android:textColor="#ff3838"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle" />
+
+    <TextView
+        android:id="@+id/secondAttemptText"
+        android:layout_width="94dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/second_data"
+        android:textAlignment="textStart"
+        android:textColor="#ff3838"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="52dp"
         android:layout_height="19dp"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="15dp"
-        android:text="Logout"
+        android:text="@string/logout"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="10sp"
@@ -176,7 +238,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/exitIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/exitIcon"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/textView9"

@@ -32,6 +32,8 @@ public class DashboardActivity extends AppCompatActivity {
     ImageView exitIcon;
     private TextView ecValueText;
     private TextView onOrOffText;
+    private TextView firstAttempt;
+    private TextView secondAttempt;
     private View circle;
 
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -84,8 +86,8 @@ public class DashboardActivity extends AppCompatActivity {
         );
 
 
-        // Read from the database
-        Query query = myRef.orderByKey().limitToLast(1);
+        // Read values from the firebase database
+        Query query = myRef.orderByKey().limitToLast(3);
         query.addValueEventListener(new ValueEventListener() {
             @SuppressLint({"DefaultLocale", "SetTextI18n"})
             @Override
@@ -96,10 +98,13 @@ public class DashboardActivity extends AppCompatActivity {
                 GradientDrawable stroke = (GradientDrawable)circle.getBackground();
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
+                Double[] ecArray = new Double[3];
+                int i=0;
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     String ecValue = (String) child.getValue();
                     assert ecValue != null;
-                    String formatVal = String.format("%.3f", Double.parseDouble(ecValue));
+                    ecArray[i] = Double.valueOf(ecValue);
+                    String formatVal = String.format("%.3f", Double.parseDouble(String.valueOf(ecArray[i])));
                     ecValueText.setText(formatVal);
                     if (Double.parseDouble(formatVal) >= 2 && Double.parseDouble(formatVal) <= 3) {
                         onOrOffText.setText("OFF");
@@ -113,7 +118,26 @@ public class DashboardActivity extends AppCompatActivity {
                         stroke.setStroke(20, Color.parseColor("#ff3838"), 10, 0);
                         from.notify(100,builder.build());
                     }
+                    i++;
                 }
+                // other 2 values setting
+                firstAttempt = findViewById(R.id.firstAttemptText);
+                secondAttempt = findViewById(R.id.secondAttemptText);
+                String formatFirst = String.format("%.3f", Double.parseDouble(String.valueOf(ecArray[0])));
+                String formatSecond = String.format("%.3f", Double.parseDouble(String.valueOf(ecArray[1])));
+                firstAttempt.setText(formatFirst);
+                secondAttempt.setText(formatSecond);
+                if(Double.parseDouble(formatFirst) >= 2 && Double.parseDouble(formatFirst) <= 3){
+                    firstAttempt.setTextColor(Color.rgb(46,204,113));
+                }else {
+                    firstAttempt.setTextColor(Color.rgb(255, 56, 56));
+                }
+                if(Double.parseDouble(formatSecond) >= 2 && Double.parseDouble(formatSecond) <= 3){
+                    secondAttempt.setTextColor(Color.rgb(46,204,113));
+                }else {
+                    secondAttempt.setTextColor(Color.rgb(255, 56, 56));
+                }
+
             }
 
             @Override
