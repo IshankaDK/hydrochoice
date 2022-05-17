@@ -12,15 +12,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="320dp"
         android:layout_height="70dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="2dp"
         android:hint="@string/email"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintBottom_toTopOf="@+id/txtInputLayoutPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -35,9 +34,9 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="4dp"
         android:hint="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +47,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,10 +78,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="199dp"
+        android:layout_marginStart="166dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="199dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="13dp"
         android:text="@string/new_to_app"
+        app:layout_constraintBottom_toTopOf="@+id/linkNewAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
@@ -116,10 +117,12 @@
         android:id="@+id/textView3"
         android:layout_width="252dp"
         android:layout_height="25dp"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="44dp"
         android:text="@string/department_of_agriculture_engineering"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/linkNewAccount" />
 
     <TextView
@@ -162,7 +165,7 @@
         android:layout_width="158dp"
         android:layout_height="177dp"
         android:layout_marginStart="127dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="126dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
