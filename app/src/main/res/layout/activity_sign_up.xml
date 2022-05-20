@@ -10,12 +10,9 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="158dp"
-        android:layout_height="177dp"
-        android:layout_marginStart="127dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="126dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -135,7 +132,7 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -146,10 +143,8 @@
         android:id="@+id/imageView"
         android:layout_width="75dp"
         android:layout_height="91dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:srcCompat="@drawable/uor" />
@@ -158,29 +153,29 @@
         android:id="@+id/textView3"
         android:layout_width="252dp"
         android:layout_height="25dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
         android:text="@string/department_of_agriculture_engineering"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="252dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
         android:text="@string/faculty_of_agriculture"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="252dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
         android:text="@string/university_of_ruhuna"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

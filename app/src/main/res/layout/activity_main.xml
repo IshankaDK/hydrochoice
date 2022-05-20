@@ -107,8 +107,8 @@
         android:id="@+id/imageView"
         android:layout_width="76dp"
         android:layout_height="102dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:srcCompat="@drawable/uor" />
@@ -117,11 +117,9 @@
         android:id="@+id/textView3"
         android:layout_width="252dp"
         android:layout_height="25dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
         android:text="@string/department_of_agriculture_engineering"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/linkNewAccount" />
 
@@ -129,10 +127,8 @@
         android:id="@+id/textView4"
         android:layout_width="252dp"
         android:layout_height="25dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="8dp"
         android:text="@string/faculty_of_agriculture"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -140,11 +136,9 @@
         android:id="@+id/textView5"
         android:layout_width="252dp"
         android:layout_height="25dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="8dp"
         android:text="@string/university_of_ruhuna"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -164,11 +158,8 @@
         android:id="@+id/imageView2"
         android:layout_width="158dp"
         android:layout_height="177dp"
-        android:layout_marginStart="127dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="126dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
