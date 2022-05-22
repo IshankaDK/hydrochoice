@@ -27,6 +27,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class DashboardActivity extends AppCompatActivity {
 
     ImageView exitIcon;
@@ -34,7 +37,12 @@ public class DashboardActivity extends AppCompatActivity {
     private TextView onOrOffText;
     private TextView firstAttempt;
     private TextView secondAttempt;
+    private TextView updateTime;
     private View circle;
+    private final double MIN_VALUE =1.5;
+    private final double MAX_VALUE =3.0;
+
+    @SuppressLint("SimpleDateFormat") SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private final DatabaseReference myRef = database.getReference("HydrochoiceApp/EC Value");
@@ -93,6 +101,7 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ecValueText = findViewById(R.id.ecValueText);
+                updateTime = findViewById(R.id.updateTime);
                 onOrOffText = findViewById(R.id.onOrOff);
                 circle = findViewById(R.id.circle);
                 GradientDrawable stroke = (GradientDrawable)circle.getBackground();
@@ -104,9 +113,14 @@ public class DashboardActivity extends AppCompatActivity {
                     String ecValue = (String) child.getValue();
                     assert ecValue != null;
                     ecArray[i] = Double.valueOf(ecValue);
+                    //set EC value
                     String formatVal = String.format("%.3f", Double.parseDouble(String.valueOf(ecArray[i])));
                     ecValueText.setText(formatVal);
-                    if (Double.parseDouble(formatVal) >= 2 && Double.parseDouble(formatVal) <= 3) {
+                    //set update time
+                    String formattedDate = df.format(Calendar.getInstance().getTime());
+                    updateTime.setText("Last update time : " + formattedDate);
+
+                    if (Double.parseDouble(formatVal) >= MIN_VALUE && Double.parseDouble(formatVal) <= MAX_VALUE) {
                         onOrOffText.setText("OFF");
                         ecValueText.setTextColor(Color.rgb(46,204,113));
                         onOrOffText.setTextColor(Color.rgb(46,204,113));
@@ -127,12 +141,12 @@ public class DashboardActivity extends AppCompatActivity {
                 String formatSecond = String.format("%.3f", Double.parseDouble(String.valueOf(ecArray[1])));
                 firstAttempt.setText(formatFirst);
                 secondAttempt.setText(formatSecond);
-                if(Double.parseDouble(formatFirst) >= 2 && Double.parseDouble(formatFirst) <= 3){
+                if(Double.parseDouble(formatFirst) >= MIN_VALUE && Double.parseDouble(formatFirst) <= MAX_VALUE){
                     firstAttempt.setTextColor(Color.rgb(46,204,113));
                 }else {
                     firstAttempt.setTextColor(Color.rgb(255, 56, 56));
                 }
-                if(Double.parseDouble(formatSecond) >= 2 && Double.parseDouble(formatSecond) <= 3){
+                if(Double.parseDouble(formatSecond) >= MIN_VALUE && Double.parseDouble(formatSecond) <= MAX_VALUE){
                     secondAttempt.setTextColor(Color.rgb(46,204,113));
                 }else {
                     secondAttempt.setTextColor(Color.rgb(255, 56, 56));
